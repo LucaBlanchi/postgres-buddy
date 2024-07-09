@@ -1,6 +1,8 @@
 const { Client } = require('pg');
 const createSubscriber = require('pg-listen').default;
 const dbConfig = require('../dbConfig');
+const channels = require('./notificationHandler');
+
 const connectionString = `postgres://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`;
 
 const client = new Client(dbConfig);
@@ -12,17 +14,18 @@ client.connect()
 
 subscriber.connect().then(() => {
   console.log("Connected to PostgreSQL for notifications");
-  subscriber.listenTo("my-channel");
-  console.log("Listening to my-channel for notifications");
-});
 
-subscriber.notifications.on("my-channel", (payload) => {
-  console.log("Received notification in 'my-channel':", payload);
-})
+  channels.forEach(channel => {
+    subscriber.listenTo(channel.name);
+    console.log(`Listening to ${channel.name} for notifications`);
+
+    subscriber.notifications.on(channel.name, channel.callback);
+  });
+});
 
 subscriber.events.on("error", (error) => {
   console.error("Error:", error);
-})
+});
 
 module.exports = {
   client,
