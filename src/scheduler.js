@@ -1,14 +1,17 @@
-const client = require('./dbClient');
+const { client } = require('./dbClient');
 const cron = require('node-cron');
 const schedule = require('node-schedule');
 
-
-// Runs every given interval
-cron.schedule('*/30 * * * * *', () => {
-  // add your code here
-});
-
-// Runs at a specific time
-const job = schedule.scheduleJob('55 10 * * *', () => {
-  // add your code here
-});
+/*
+ * Include scheduled tasks here, using cron.schedule or schedule.scheduleJob
+ *
+ * Examples:
+ *
+ * cron.schedule('* * * * * *', () => {
+ *   console.log('Running a task every second');
+ * });
+ *
+ * schedule.scheduleJob('30 * * * *', () => {
+ *   console.log('Running a task every hour at the 30th minute');
+ * });
+ */

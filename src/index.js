@@ -1,2 +1,2 @@
-const client = require('./dbClient');
+require('./dbClient');
 require('./scheduler');
