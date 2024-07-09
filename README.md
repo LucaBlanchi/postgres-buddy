@@ -15,7 +15,7 @@ const dbConfig = {
 
 ## queryExecutor.js
 This file contains the logic for executing queries on the database. Out of the box, it
-exports the executeAndLogQuery, which can be used to run queries and log the results.
+exports the executeAndLogQuery function, which can be used to run queries and log the results.
 
 ## Schedule a task
 To schedule a task to run at a certain time or at any given interval, add a new task in the scheduler.js file,
