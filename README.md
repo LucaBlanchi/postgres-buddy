@@ -19,8 +19,8 @@ exports the executeAndLogQuery, which can be used to run queries and log the res
 
 ## Schedule a task
 To schedule a task to run at a certain time or at any given interval, add a new task in the scheduler.js file,
-following the examples. You can use the functions in the queryExecutor.js file to execute queries.
+following the examples. You can use the functions exported by queryExecutor.js file to execute queries.
 
 ## React to notifications
-To react to notifications, add a new listener in the channels constant notifier.js file, following the examples.
-You can use the functions in the queryExecutor.js file to execute queries.
+To react to notifications, add a new listener in the channels constant in notificationHandler.js file, following the examples.
+You can use the functions exported by queryExecutor.js file to execute queries.
