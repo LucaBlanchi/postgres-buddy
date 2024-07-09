@@ -1,19 +1,21 @@
-const { client } = require('./dbClient');
-
-/*
- * Add { name: 'channel-to-listen-name', callback: (payload) => { ... } } objects to the array below
- * to listen and react to notifications from PostgreSQL.
- *
- * For example:
- * {
- *   name: 'my-channel',
- *   callback: (payload) => {
- *     console.log("Received notification in 'my-channel':", payload);
- *   }
- */
+const { executeAndLogQuery } = require('./queryExecutor');
+const { subscriber } = require('./dbClient');
 
 const channels = [
-  // { name: 'channel-to-listen-name', callback: (payload) => { ... } }
+  // {
+  //   name: 'my-channel',
+  //   callback: (payload) => {
+  //     console.log("Received notification in 'my-channel':", payload);
+  //     executeAndLogQuery('SELECT NOW()');
+  //   }
+  // }
 ];
+
+channels.forEach(channel => {
+  subscriber.listenTo(channel.name);
+  console.log(`Listening to ${channel.name} for notifications`);
+
+  subscriber.notifications.on(channel.name, channel.callback);
+});
 
 module.exports = channels;

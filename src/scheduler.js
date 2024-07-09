@@ -1,17 +1,13 @@
-const { client } = require('./dbClient');
+const { executeAndLogQuery } = require('./queryExecutor');
 const cron = require('node-cron');
 const schedule = require('node-schedule');
 
-/*
- * Include scheduled tasks here, using cron.schedule or schedule.scheduleJob
- *
- * Examples:
- *
- * cron.schedule('* * * * * *', () => {
- *   console.log('Running a task every second');
- * });
- *
- * schedule.scheduleJob('30 * * * *', () => {
- *   console.log('Running a task every hour at the 30th minute');
- * });
- */
+// cron.schedule('* * * * * *', async () => {
+//   console.log('Running a task every second');
+//   await executeAndLogQuery('SELECT NOW()');
+// });
+
+// schedule.scheduleJob('0 0 0 * * *', async () => {
+//    console.log('Running a task every midnight');
+//    await executeAndLogQuery('SELECT NOW()');
+// });
