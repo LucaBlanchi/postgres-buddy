@@ -1,0 +1,15 @@
+{
+  "name": "postgres-buddy",
+  "version": "1.0.0",
+  "description": "A simple service that enhances PostgreSQL functionality",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lblanchi",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.12.0"
+  }
+}
