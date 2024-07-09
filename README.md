@@ -1,5 +1,5 @@
 # postgres-buddy
-A simple Node.js service that enhances PostgreSQL functionality, introducing scheduling and reactivity to notifications.
+A simple Node.js service that enhances PostgreSQL, introducing scheduling and reactivity to notifications.
 
 ## Configuration
 To connect to your PostgreSQL database, add a dbConfig.js file to the root of the project with the following content:
@@ -11,6 +11,8 @@ const dbConfig = {
   password: 'your-password',
   port: 'your-port (default: 5432)',
 };
+
+module.exports = dbConfig;
 ```
 
 ## queryExecutor.js
