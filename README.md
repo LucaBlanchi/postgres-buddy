@@ -24,5 +24,5 @@ To schedule a task to run at a certain time or at any given interval, add a new 
 following the examples. You can use the functions exported by queryExecutor.js file to execute queries.
 
 ## React to notifications
-To react to notifications, add a new listener in the channels constant in notificationHandler.js file, following the examples.
-You can use the functions exported by queryExecutor.js file to execute queries.
+To react to notifications leveraging pg-listen, add a new listener in the channels constant in notificationHandler.js file, following the examples.
+You can use the functions exported by the queryExecutor.js file to execute queries.
