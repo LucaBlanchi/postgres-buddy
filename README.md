@@ -21,7 +21,7 @@ exports the `executeAndLogQuery` function, which can be used to run queries and 
 
 ## Schedule a task
 To schedule a task to run at a certain time or at any given interval, add a new task in the scheduler.js file,
-following the examples. You can use the functions exported by `queryExecutor.js` file to execute queries.
+following the examples. You can use the functions exported by the `queryExecutor.js` file to execute queries.
 
 ## React to notifications
 To react to notifications leveraging `pg-listen`, add a new entry in the `channels` constant in the notificationHandler.js file, following the examples.
